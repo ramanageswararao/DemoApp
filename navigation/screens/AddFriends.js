@@ -11,6 +11,7 @@ import {
 import {connect} from 'react-redux';
 import {store} from '../store';
 import {addTodo} from '../actions';
+import axios from 'axios';
 
 class AddFriendsScreen extends Component {
   state = {
@@ -43,7 +44,11 @@ class AddFriendsScreen extends Component {
         Age__c: age,
       },
     ];
-    store.dispatch(addTodo(payload));
+    //store.dispatch(addTodo(payload));
+    axios.post(
+      'https://rnapp-mock-developer-edition.ap24.force.com/assignment1visualforce/services/apexrest/apiservice',
+      payload,
+    );
     Alert.alert('Success', 'Added user successsfully');
   };
 
