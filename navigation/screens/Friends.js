@@ -44,7 +44,7 @@ const FriendsScreen = ({users, getUsers, navigation}) => {
                 style={styles.image}
               />
               {/* <UserIcon name={'user'} size={26} color={'black'}></UserIcon> */}
-
+              {/* //hello */}
               <View>
                 <Text style={styles.heading}>
                   {item.firstName} {item.lastName}
