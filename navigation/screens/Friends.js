@@ -36,27 +36,34 @@ const FriendsScreen = ({users, getUsers, navigation}) => {
         data={users}
         keyExtractor={item => item.Id}
         renderItem={({item}) => (
-          <TouchableOpacity
-            onPress={() => navigation.navigate('AddFriends', {data: item})}>
-            <View style={styles.container1}>
-              <Image
-                source={{url: 'https://randomuser.me/api/portraits/men/10.jpg'}}
-                style={styles.image}
-              />
-              {/* <UserIcon name={'user'} size={26} color={'black'}></UserIcon> */}
-              {/* //hello */}
-              <View>
-                <Text style={styles.heading}>
-                  {item.firstName} {item.lastName}
-                </Text>
-                <Text></Text>
-                <Text>
-                  {'Age:'}
-                  {item.age}
-                </Text>
+          <View>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('AddFriends', {data: item})}>
+              <View style={styles.container1}>
+                <Image
+                  source={{
+                    url: 'https://randomuser.me/api/portraits/men/10.jpg',
+                  }}
+                  style={styles.image}
+                />
+                <View style={styles.infoStyle}>
+                  <Text style={styles.titleStyle}>
+                    {item.firstName} {item.lastName}
+                  </Text>
+                  <Text style={styles.bodyTextStyle}>
+                    {'Age:'}
+                    {item.age}
+                  </Text>
+                </View>
               </View>
-            </View>
-          </TouchableOpacity>
+            </TouchableOpacity>
+            <View
+              style={[
+                styles.viewStyleForLine,
+                {borderBottomColor: 'black' + '75'},
+              ]}
+            />
+          </View>
         )}
         style={styles.list}
       />
@@ -71,6 +78,7 @@ const FriendsScreen = ({users, getUsers, navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: 'white',
   },
   list: {
     padding: 10,
@@ -83,21 +91,14 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   image: {
-    height: 70,
-    width: 70,
+    height: 60,
+    width: 60,
     borderRadius: 35,
     marginRight: 10,
   },
   heading: {
     fontSize: 15,
     fontWeight: 'bold',
-  },
-  actionableContainerDivider: {
-    borderTopWidth: 0.5,
-    marginRight: -20,
-    marginLeft: -20,
-    marginBottom: 10,
-    marginTop: -15,
   },
   activityIndicator: {
     flex: 1,
@@ -108,6 +109,28 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  viewStyleForLine: {
+    marginVertical: 10,
+    marginHorizontal: 16,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+  },
+  titleStyle: {
+    color: 'black',
+    fontSize: 20,
+  },
+  bodyTextStyle: {
+    color: 'black',
+    fontSize: 14,
+  },
+  infoStyle: {
+    marginHorizontal: 50,
+    marginVertical: 1,
+  },
+  submitButton: {
+    padding: 10,
+    marginVertical: 30,
+    height: 40,
   },
 });
 

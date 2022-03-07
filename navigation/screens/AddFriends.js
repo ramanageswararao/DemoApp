@@ -76,11 +76,12 @@ class AddFriendsScreen extends Component {
         <TextInput
           style={styles.input}
           underlineColorAndroid="transparent"
-          placeholder={data == undefined ? 'age' : ''}
+          placeholder={data == undefined ? 'Age' : ''}
           autoCorrect={false}
           autoCapitalize="none"
           value={data?.age.toString()}
           onChangeText={this.handleAge}
+          keyboardType="numeric"
         />
 
         <Button
@@ -107,18 +108,13 @@ export default connect(mapStateToProps)(AddFriendsScreen);
 const styles = StyleSheet.create({
   container: {
     paddingTop: 23,
+    marginHorizontal: 16,
   },
   input: {
     margin: 15,
-    height: 40,
+    height: 50,
     borderWidth: 1,
-    padding: 10,
-  },
-  submitButton: {
-    backgroundColor: '#00bfff',
-    alignSelf: 'center',
-    padding: 10,
-    margin: 15,
-    height: 40,
+    borderRadius: 24,
+    paddingHorizontal: 20,
   },
 });
