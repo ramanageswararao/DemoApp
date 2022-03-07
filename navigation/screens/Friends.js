@@ -66,7 +66,6 @@ const FriendsScreen = ({users, getUsers, navigation}) => {
         )}
         style={styles.list}
       />
-
       <Button
         title={'Add New Friend'}
         onPress={() => navigation.navigate('AddFriends')}></Button>

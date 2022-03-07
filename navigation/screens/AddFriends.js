@@ -30,9 +30,7 @@ class AddFriendsScreen extends Component {
     this.setState({age: text});
   };
 
-  login = (firstName, lastName, age) => {
-    // const netInfo = useNetInfo();
-
+  addUser = (firstName, lastName, age) => {
     const payload = [
       {
         attributes: {
@@ -44,12 +42,8 @@ class AddFriendsScreen extends Component {
         Age__c: age,
       },
     ];
-    //store.dispatch(addTodo(payload));
-    axios.post(
-      'https://rnapp-mock-developer-edition.ap24.force.com/assignment1visualforce/services/apexrest/apiservice',
-      payload,
-    );
-    Alert.alert('Success', 'Added user successsfully');
+    store.dispatch(addTodo(payload));
+    Alert.alert('User successfully Added');
   };
 
   render() {
@@ -92,7 +86,7 @@ class AddFriendsScreen extends Component {
         <Button
           title={'Submit'}
           onPress={() =>
-            this.login(
+            this.addUser(
               this.state.firstName,
               this.state.lastName,
               this.state.age,
