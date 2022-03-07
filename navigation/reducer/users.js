@@ -5,9 +5,8 @@ import {setUsers} from '../actions';
 const userReducer = createReducer(
   {
     [setUsers]: (state, payload) => payload,
-   
   },
   [],
 );
 
-    export default userReducer;
+export default userReducer;

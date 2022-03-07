@@ -19,27 +19,3 @@ const getUsers = async () => {
 };
 
 export default {getUsers};
-
-// let requestUrl = "https://rnapp-mock-developer-edition.ap24.force.com/services/apexrest/apiservice"
-
-// export default getUsers =  () => {
-//   fetch(requestUrl).then((response) => response.json()).then((json) => {
-
-//     // console.log(json);
-
-//   const users = json.map(item => {
-//     return {
-//       FirstName: item.First_Name__c,
-//       Id: item.Id,
-//       Age: item.Age__c,
-//       LastName:item.Last_Name__c
-//     };
-//   });
-
-//   return users;
-
-//    }).catch((error) => {
-//      console.log(error);
-//    })
-
-// };

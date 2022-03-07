@@ -5,7 +5,7 @@ import connectionReducer from './connectionReducer';
 
 const rootReducer = combineReducers({
   users: userReducer,
- addToDo:connectionReducer
+  addToDo: connectionReducer,
 });
 
 export default rootReducer;

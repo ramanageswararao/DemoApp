@@ -14,7 +14,6 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import {getUsers} from '../actions';
-//import UserIcon from 'react-native-vector-icons/dist/FontAwesome';
 
 const FriendsScreen = ({users, getUsers, navigation}) => {
   useEffect(() => {
